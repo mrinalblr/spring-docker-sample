@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-       mavenHome = tool name: 'maven', type: 'maven'
+       mavenHome = tool name: 'usr/local/maven', type: 'maven'
        mavenCMD = "${mavenHome}/bin/mvn"
     }
     stages{
