@@ -1,6 +1,9 @@
 pipeline{
     agent any
-    
+    environment{
+       mavenHome = tool name: 'maven', type: 'maven'
+       mavenCMD = "${mavenHome}/bin/mvn"
+    }
     stages{
         stage('SCM Checkout'){
         steps{
@@ -11,7 +14,7 @@ pipeline{
     stage('Build'){
         steps{
             echo 'Building the Jar '
-            sh 'mvn clean package'
+            sh "${mavenCMD} clean package"
             sh 'docker build . -t deomrinal/spring-docker-sample:1.0.0'
         }
     }
