@@ -13,4 +13,9 @@ public class HelloController {
   public String hello(){
     return "Hello from Spring.";
   }
+
+  @GetMapping("/logout")
+  public String logout(){
+    return "logged out successfully";
+  }
 }
