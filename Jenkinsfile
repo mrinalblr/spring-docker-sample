@@ -5,6 +5,11 @@ pipeline{
        mavenCMD = "${mavenHome}/bin/mvn"
     }
     stages{
+        stage('Init'){
+        steps{
+           echo 'Cleaning the directories'
+        }
+    }
         stage('SCM Checkout'){
         steps{
            echo 'Initializing the pipeline with GIT repository SC'
