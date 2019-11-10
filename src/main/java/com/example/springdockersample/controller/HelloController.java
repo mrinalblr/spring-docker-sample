@@ -18,4 +18,8 @@ public class HelloController {
   public String logout(){
     return "logged out successfully";
   }
+  @GetMapping("/login")
+  public String login(){
+    return "Logged in successfully";
+  }
 }
